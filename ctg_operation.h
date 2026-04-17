@@ -7,8 +7,8 @@
 class CtgOperation final : public IUnaryOperation {
     double unaryExecute(double arg) const override {
         double radians = arg * (std::numbers::pi / 180.0);
-        return std::sin(radians) == 0.0 ? throw std::domain_error("Ctangent is undefined at this point")
-                                    : 1.0 / std::tan(radians);
+        return std::abs(std::sin(radians)) < 1e-10 ? throw std::domain_error("Ctangent is undefined at this point")
+                                                   : 1.0 / std::tan(radians);
     }
 };
 

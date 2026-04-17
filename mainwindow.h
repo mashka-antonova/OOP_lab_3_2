@@ -21,7 +21,7 @@ public:
 private:
     Ui::MainWindow *ui;
     CalculatorFacade facade;
-    bool   resultShown;
+    bool resultShown;
     QString numberBuffer;
 
     QString formatResult(double value) const;

@@ -5,7 +5,6 @@ class Memory final
 {
 public:
     Memory();
-
     void add(double value);
     void subtract(double value);
     void clear();

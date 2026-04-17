@@ -9,7 +9,7 @@ public:
     UnaryOperator(const std::string& name, int precedence)
         : name(name), precedence(precedence) {}
 
-    void UnaryOperator::accept(ITokenVisitor& visitor) const {
+    void accept(ITokenVisitor& visitor) const {
         visitor.visit(*this);
     }
 

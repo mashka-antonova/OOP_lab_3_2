@@ -11,9 +11,10 @@ public:
     explicit Number(double num)
         : value(num) {}
 
-    void Number::accept(ITokenVisitor& visitor) const {
+    void accept(ITokenVisitor& visitor) const override {
         visitor.visit(*this);
     }
+
     double getValue() const {
         return value;
     }

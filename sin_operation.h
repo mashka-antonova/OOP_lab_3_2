@@ -3,6 +3,7 @@
 
 #include "i_unary_operation.h"
 #include <cmath>
+#include <numbers>
 
 class SinOperation final : public IUnaryOperation {
     double unaryExecute(double arg) const override {

@@ -4,11 +4,11 @@
 #include "i_unary_operation.h"
 #include <cmath>
 
-class TgOperation : public IUnaryOperation {
+class TgOperation final : public IUnaryOperation {
     double unaryExecute(double arg) const override {
         double radians = arg * (std::numbers::pi / 180.0);
-        return std::cos(radians) == 0.0 ? throw std::domain_error("Tangent is undefined at this point")
-                                    : std::tan(radians);
+        return std::abs(std::cos(radians)) < 1e-10 ? throw std::domain_error("Tangent is undefined at this point")
+                                                   : std::tan(radians);
     }
 };
 

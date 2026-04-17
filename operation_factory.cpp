@@ -12,8 +12,6 @@
 #include "unary_minus_operation.h"
 #include "unary_plus_operation.h"
 
-//лучше чтобы объекты операций каждый раз заново создавались или один раз и потом переиспользовались?
-
 OperationFactory::OperationFactory() {
     initCreators();
 }
@@ -28,10 +26,10 @@ void OperationFactory::initCreators() {
     creators["unary-"] = []{ return std::make_unique<UnaryMinusOperation>(); };
     creators["sin"] = []{ return std::make_unique<SinOperation>(); };
     creators["cos"] = []{ return std::make_unique<CosOperation>(); };
-    creators["tg"]  = []{ return std::make_unique<TgOperation>(); };
+    creators["tg"] = []{ return std::make_unique<TgOperation>(); };
     creators["ctg"] = []{ return std::make_unique<CtgOperation>(); };
     creators["sqrt"] = []{ return std::make_unique<SqrtOperation>(); };
-    creators["recip"]  = []{ return std::make_unique<ReciprocalOperation>(); };
+    creators["recip"] = []{ return std::make_unique<ReciprocalOperation>(); };
 }
 
 std::unique_ptr<IOperation> OperationFactory::create(const std::string& name) const {
