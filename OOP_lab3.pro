@@ -18,8 +18,7 @@ SOURCES += \
     memory.cpp \
     operation_factory.cpp \
     operator_registry.cpp \
-    shunting_yard.cpp \
-    unary_operator_factory.cpp
+    shunting_yard.cpp
 
 HEADERS += \
     add_operation.h \

@@ -1,5 +1,6 @@
 #include "shunting_yard.h"
 
+#include "binary_operator.h"
 #include "unary_operator.h"
 #include <stdexcept>
 
